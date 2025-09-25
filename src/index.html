@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARIA - AI Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body style="background-image: url('ARIAlogo.png'); background-repeat: no-repeat; background-size: cover;">
+    <div class="app">
+        <!-- Sidebar -->
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2>Chat History</h2>
+                <button id="closeSidebar" class="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div class="sidebar-content">
+                <button id="newChatBtn" class="new-chat-btn">
+                    <i class="fas fa-plus"></i>
+                    New Chat
+                </button>
+                
+                <div class="chat-history">
+                    <div class="history-item">
+                        <i class="fas fa-message"></i>
+                        <div class="history-content">
+                            <div class="history-title">What is artificial intelligence?</div>
+                            <div class="history-date">Today</div>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <i class="fas fa-message"></i>
+                        <div class="history-content">
+                            <div class="history-title">Help with JavaScript code</div>
+                            <div class="history-date">Yesterday</div>
+                        </div>
+                    </div>
+                    <div class="history-item">
+                        <i class="fas fa-message"></i>
+                        <div class="history-content">
+                            <div class="history-title">CSS Grid vs Flexbox</div>
+                            <div class="history-date">2 days ago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <button class="footer-btn">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </button>
+                <button class="footer-btn">
+                    <i class="fas fa-question-circle"></i>
+                    Help & FAQ
+                </button>
+            </div>
+        </div>
+
+        <!-- Sidebar Overlay for Mobile -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+        <!-- Main Chat Container -->
+        <div class="main-container">
+            <!-- Header -->
+            <header class="chat-header">
+                <div class="header-left">
+                    <button id="toggleSidebar" class="menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="logo" style="display: flex; background-image:  url('ARIAlogo.png'); background-size: cover; background-repeat: no-repeat; background-position: center;">
+                        <div class="logo-icon">
+                            <i class="fas fa-sparkles"><img style="width: 40px; height: 40px; align-items: center; justify-content: center;" src="ARIAlogo.png" alt=""></i>
+                        </div>
+                        <div class="logo-text">
+                            <h1>ARIA</h1>
+                            <p>Adaptive Reasoning & Intelligence Assistant</p>
+                        </div>
+                    </div>
+                </div>
+                <button id="themeToggle" class="theme-btn">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </header>
+
+            <!-- Welcome Screen -->
+            <div id="welcomeScreen" class="welcome-screen">
+                <div class="welcome-content">
+                    <div class="welcome-header">
+                        <div class="welcome-icon">
+                            <i class="fas fa-sparkles"></i>
+                        </div>
+                        <h1>Welcome to ARIA</h1>
+                        <p>Your Adaptive Reasoning & Intelligence Assistant. Ask me anything and I'll help you find the answers you need.</p>
+                    </div>
+
+                    <div class="suggestions-grid">
+                        <div class="suggestion-card" data-prompt="Can you help me debug a JavaScript function that's not working properly?">
+                            <div class="suggestion-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="suggestion-content">
+                                <h3>Code Help</h3>
+                                <p>Help me debug my JavaScript code</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-card" data-prompt="I need creative ideas for a web development project. Can you help me brainstorm?">
+                            <div class="suggestion-icon">
+                                <i class="fas fa-lightbulb"></i>
+                            </div>
+                            <div class="suggestion-content">
+                                <h3>Creative Ideas</h3>
+                                <p>Brainstorm ideas for my project</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-card" data-prompt="Can you explain how machine learning works in simple terms?">
+                            <div class="suggestion-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="suggestion-content">
+                                <h3>Learning</h3>
+                                <p>Explain complex concepts simply</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-card" data-prompt="What are the latest trends in web development for 2024?">
+                            <div class="suggestion-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="suggestion-content">
+                                <h3>Quick Answers</h3>
+                                <p>Get instant answers to questions</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features-section">
+                        <h2>What can ARIA do?</h2>
+                        <div class="features-grid">
+                            <div class="feature">
+                                <h3>💡 Creative Problem Solving</h3>
+                                <p>Get innovative solutions and fresh perspectives on your challenges</p>
+                            </div>
+                            <div class="feature">
+                                <h3>🔍 Research & Analysis</h3>
+                                <p>Analyze data, research topics, and provide detailed explanations</p>
+                            </div>
+                            <div class="feature">
+                                <h3>⚡ Instant Support</h3>
+                                <p>Quick answers to technical questions and step-by-step guidance</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="api-note">
+                        <p><strong>Note:</strong> This is a demo interface. To enable full AI functionality, connect your OpenAI API key in the settings.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages Container -->
+            <div id="chatContainer" class="chat-container" style="display: none;">
+                <div id="messagesArea" class="messages-area">
+                    <!-- Messages will be dynamically added here -->
+                </div>
+            </div>
+
+            <!-- Chat Input -->
+            <div class="chat-input-container">
+                <form id="chatForm" class="chat-form">
+                    <div class="input-wrapper">
+                        <textarea 
+                            id="messageInput" 
+                            placeholder="Ask ARIA anything..."
+                            rows="1"
+                        ></textarea>
+                        <button type="submit" id="sendBtn" class="send-btn">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="input-footer">
+                        <div class="input-hint">Press Enter to send, Shift+Enter for new line</div>
+                        <div class="disclaimer">ARIA can make mistakes. Consider checking important information.</div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
